@@ -3,9 +3,12 @@
 import Slider from 'react-slick';
 import { useSelector } from 'react-redux';
 import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
+import { RootState } from '../redux/store'; // Replace with correct path if needed
+import { Artwork } from '../types/artwork';
+
 
 export default function ArtworkCarousel() {
-  const artworks = useSelector((state: any) => state.artworks);
+  const artworks = useSelector((state: RootState) => state.artworks as Artwork[]);
 
   const settings = {
     dots: true,

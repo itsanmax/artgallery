@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Artwork } from '../types/artwork';
 
 const artworksSlice = createSlice({
   name: 'artworks',
-  initialState: [] as any[],
+  initialState: [] as Artwork[],
   reducers: {
     addArtwork: (state, action: PayloadAction<any>) => {
         console.log('addArtwork', action.payload);

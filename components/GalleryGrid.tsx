@@ -6,18 +6,21 @@ import { Grid, Card, CardMedia, CardContent, Typography, Box } from '@mui/materi
 import { db } from '../utils/db';
 import { addOrUpdateArtwork } from '../redux/artworksSlice';
 import LightboxModal from './LightboxModal';
+import { RootState } from '../redux/store';
+import { Artwork } from '../types/artwork';
+
 
 export default function GalleryGrid() {
     const dispatch = useDispatch();
-    const artworks = useSelector((state: any) => state.artworks);
+    const artworks = useSelector((state: RootState) => state.artworks as Artwork[]);
     const [openModal, setOpenModal] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     useEffect(() => {
-        db.artworks.toArray().then(arts => {
+        db.artworks.toArray().then((arts: Artwork[]) => {
           arts.forEach(art => dispatch(addOrUpdateArtwork(art)));
         });
-      }, []);
+      }, [dispatch]);
   
       const handleOpenModal = (index: number) => {
         setSelectedIndex(index);

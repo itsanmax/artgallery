@@ -12,11 +12,12 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useEffect } from 'react';
+import { Artwork } from '../types/artwork';
 
 interface LightboxModalProps {
   open: boolean;
   onClose: () => void;
-  artworks: any[];
+  artworks: Artwork[];
   currentIndex: number;
   setCurrentIndex: (index: number) => void;
 }
