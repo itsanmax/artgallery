@@ -40,3 +40,12 @@ a {
     color-scheme: dark;
   }
 }
+
+/* Fix react-slick arrows visibility */
+.slick-prev:before,
+.slick-next:before {
+  color: black !important; /* 👈 set to your desired arrow color */
+  font-size: 30px;
+  opacity: 1 !important;
+  z-index: 10;
+}
