@@ -39,8 +39,8 @@ export default function GalleryGrid() {
     
     <Box mt={4}>
     <Grid container spacing={3}>
-      {artworks.map((art: any, index: number) => (
-        <Grid xs={12} sm={6} md={4} key={art.id}>
+      {artworks.map((art: Artwork, index: number) => (
+        <Grid item xs={12} sm={6} md={4} key={art.id}>
           <Card onClick={() => handleOpenModal(index)}
               sx={{ cursor: 'pointer', transition: '0.3s', '&:hover': { boxShadow: 6 } }}
         >

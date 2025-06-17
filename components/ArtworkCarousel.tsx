@@ -29,7 +29,7 @@ export default function ArtworkCarousel() {
         Art Slideshow
       </Typography>
       <Slider {...settings}>
-        {artworks.map((art: any) => (
+        {artworks.map((art: Artwork) => (
           <Box key={art.id} px={2}>
             <Card>
               <CardMedia component="img" height="400" image={art.image} alt={art.title} />
