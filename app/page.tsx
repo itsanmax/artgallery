@@ -9,7 +9,20 @@ export default function Home() {
   return (
     <Container>
       <Box display="flex" justifyContent="space-between" alignItems="center" mt={4} mb={2}>
-        <Typography variant="h4">🎨 Duggu - Art Gallery</Typography>
+      <Typography variant="h4">
+          🎨 Art Gallery{' '}
+          <Box
+            component="span"
+            sx={{
+              fontSize: { xs: '0.7rem', sm: '0.8rem' },
+              fontStyle: 'italic',
+              fontFamily: 'cursive',
+              color: 'text.secondary',
+            }}
+          >
+            by Duggu
+          </Box>
+        </Typography>
         <Link href="/upload" passHref>
           <Button variant="contained">Upload New Art</Button>
         </Link>

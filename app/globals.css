@@ -41,7 +41,18 @@ a {
   }
 }
 
+@media (max-width: 600px) {
+  .slick-prev {
+    left: -11px !important;
+  }
+  .slick-next {
+    right: -11px !important;
+  }
+}
+
 /* Fix react-slick arrows visibility */
+
+
 .slick-prev:before,
 .slick-next:before {
   color: black !important; /* 👈 set to your desired arrow color */
