@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Grid, Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
+import { Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
+import Grid from '@mui/material/Grid';
+
 import { db } from '../utils/db';
 import { addOrUpdateArtwork } from '../redux/artworksSlice';
 import LightboxModal from './LightboxModal';
@@ -40,17 +42,19 @@ export default function GalleryGrid() {
     <Box mt={4}>
     <Grid container spacing={3}>
       {artworks.map((art: Artwork, index: number) => (
-        <Grid item xs={12} sm={6} md={4} key={art.id}>
+
+        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={art.id}>
+
           <Card onClick={() => handleOpenModal(index)}
-              sx={{ cursor: 'pointer', transition: '0.3s', '&:hover': { boxShadow: 6 } }}
-        >
-            <CardMedia component="img" height="250" image={art.image} alt={art.title} />
-            <CardContent>
-              <Typography variant="h6">{art.title}</Typography>
-              <Typography variant="body2" color="textSecondary">{art.description}</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+                sx={{ cursor: 'pointer', transition: '0.3s', '&:hover': { boxShadow: 6 } }}
+          >
+              <CardMedia component="img" height="250" image={art.image} alt={art.title} />
+              <CardContent>
+                <Typography variant="h6">{art.title}</Typography>
+                <Typography variant="body2" color="text.secondary">{art.description}</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
       ))}
     </Grid>
     <LightboxModal

@@ -1,11 +1,6 @@
 import Dexie, { Table } from 'dexie';
+import { Artwork } from '../types/artwork';
 
-export interface Artwork {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-}
 
 class ArtGalleryDB extends Dexie {
   artworks!: Table<Artwork, number>;
